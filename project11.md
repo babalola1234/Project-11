@@ -18,9 +18,8 @@
 ![image for ansible version](./images/Project-11-image-1-Ansible-version.PNG)
 
 
-* Created a new Freestyle project called ansible in Jenkins and pointed it to ymy ‘ansible-config-mgt’ repository.
+* Created a new Freestyle project called ansible in Jenkins and pointed it to my ‘ansible-config-mgt’ repository.
 
-![image free style Ansible](./images/)
 
 * Configure Webhook in GitHub and set webhook to trigger ansible build.
 
@@ -46,7 +45,7 @@
 
 `  git clone git@github.com:babalola1234/ansible-config-mgt.git ` 
 
-![image of gir clone above](./images/)
+![image of git clone above](./images/Project-11-image-4f-git-clone.PNG)
 
 ### BEGIN ANSIBLE DEVELOPMENT
 * In my ansible-config-mgt GitHub repository, created a new branch called feature/prj-101-ansible.
@@ -95,13 +94,14 @@
 ### Step 5 – Created a Common Playbook --common.yml and updated with the below codes
 
 
-![image of commom.yml]
+![image of commom.yml](./images/Project-11-image-5d-common-yml.PNG)
+
 
 ### Step 6 – Updated GITHUB with the latest code from my local machine
 
 ` git status `
 
-` git add .  
+` git add .  `
 
 ` git commit -m "code update" `
 
@@ -131,7 +131,7 @@
 
 ![image of ansible first run](./images/Project-11-image-8-ansible-playbook.-one-failed.PNG)
 
-![image of ansible second run ](./images/Project-11-image-9-wireshark-version-on-my-mysql.PNG)
+![image of ansible second run ](./images/Project-11-image-8a-ansible-playbook.-one-all-passed.PNG)
 
 ![image of wireshark ](./images/Project-11-image-9-wireshark-version-on-my-mysql.PNG)
 
