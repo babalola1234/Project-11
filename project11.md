@@ -135,6 +135,8 @@
 
 ![image of wireshark ](./images/Project-11-image-9-wireshark-version-on-my-mysql.PNG)
 
+![iamge of ansible management](./images/Project-11-image-9a-ansible-mgt.PNG)
+
 
 
 
