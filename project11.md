@@ -21,18 +21,19 @@
 * Created a new Freestyle project called ansible in Jenkins and pointed it to my ‘ansible-config-mgt’ repository.
 
 
-* Configure Webhook in GitHub and set webhook to trigger ansible build.
+* Configured Webhook in GitHub and set webhook to trigger ansible build.
 
 ![image for webhook](./images/Project-11-image-2-webhook-config.PNG)
 
-* Configured a Post-build job to save all (**) files, like you did it in Project 9.
+* Configured a Post-build job to save all (**) files, like I did  in Project 9.
 
 ![image for postbuild job](./images/Project-11-image-3-configured-postbuild.PNG)
 
 * Made some changes in README.MD file in master branch to test if the builds starts automatically and Jenkins saves the files (build artifacts) in the following folder ls /var/lib/jenkins/jobs/ansible/builds/2/archive/
 
+* images below confirms the above task
 
-![iamge for tested post build in jenkins](./images/Project-11-image-3a-tested-postbuild-job.PNG)
+![image for tested post build in jenkins](./images/Project-11-image-3a-tested-postbuild-job.PNG)
 
 ![image ls /var/lib/jenkins/jobs/ansible/builds/2/archive/](./images/Project-11-image-3ab-tested-postbuild-job-var-lib.PNG)
 
@@ -41,14 +42,15 @@
 
 *  VSC configured and connected my newly created GitHub repository.
 
-* Cloned down your ansible-config-mgt repo to your Jenkins-Ansible instance
+* Cloned down my ansible-config-mgt repo to my Jenkins-Ansible instance using below command
 
 `  git clone git@github.com:babalola1234/ansible-config-mgt.git ` 
 
 ![image of git clone above](./images/Project-11-image-4f-git-clone.PNG)
 
-### BEGIN ANSIBLE DEVELOPMENT
-* In my ansible-config-mgt GitHub repository, created a new branch called feature/prj-101-ansible.
+### SETTING ANSIBLE DEVELOPMENT FOR BUID JOBS
+
+* In my ansible-config-mgt GitHub repository, i created a new branch called feature/prj-101-ansible. Image below
 
 ![image of new branch in github](./images/Project-11-image-4-new-branch-created.PNG)
 
@@ -57,47 +59,47 @@
 
 ![image for checkout codes](./images/Project-11-image-4-git-checkout-feature.PNG)
 
-* Created a directory named inventory, and touched 4 files as follows dev.yml, staging.yml, uat.yml, and prod.yml respectively.
+* I Created a directory named inventory, and touched 4 files as follows dev.yml, staging.yml, uat.yml, and prod.yml respectively. 
 
 ![image for yml files above](./images/Project-11-image-4d-inventory-stage-uat-prod-dev.PNG)
 
-* Created another dir named playbooks, in it I touched a file called common.yml
+* I Created another dir named playbooks, in it I touched a file called common.yml
 
 ![image for pplaybook dir](./images/Project-11-image-4a-playbooks-inventory.PNG)
 
 
-### Step 4 – Set up an Ansible Inventory
+### Step 4 – Setting  up an Ansible Inventory file
 
-* installed ssh-agent on my jenkins-Ansible server
+* installed ssh-agent on my jenkins-Ansible server using the command below
 
 ` ssh-add `
 
-* Confirmed  the key has been added with the command below,
+* I Confirmed  the key has been added with the command below,
 
 ` ssh-add -l `
 
 ![image of new key added](./images/Project-11-image-5b-keys-added-to-jenkins-ansible.PNG)
 
 
-* ssh into Jenkins-Ansible server using ssh-agent
+* I ssh into Jenkins-Ansible server using ssh-agent
 
 ` ssh -A ubuntu@3.134.150.221 `
 
 ![image of ssh into jenkin-ansible server](./images/Project-11-image-5c-ssh-into-jenkin-ansible-server-after-keys-added.PNG)
 
 
-* Updated my inventory/dev.yml file with the below 
+* I Updated my inventory/dev.yml file see image below 
 
 
 ![image of inventory update](./images/Project-11-image-5-dev-yml.PNG)
 
-### Step 5 – Created a Common Playbook --common.yml and updated with the below codes
+### Step 5 – I Created a Common Playbook --named common.yml and updated with the below codes
 
 
 ![image of commom.yml](./images/Project-11-image-5d-common-yml.PNG)
 
 
-### Step 6 – Updated GITHUB with the latest code from my local machine
+### Step 6 – I Updated GITHUB with the latest code from my local machine
 
 ` git status `
 
@@ -107,7 +109,7 @@
 
 ![image of git git add and push](./images/Project-11-image-5a-git-add-git-push.PNG)
 
-* Created a Pull request (PR)
+* I Created a Pull request (PR)
 
 ![image of compare and pull request ](./images/Project-11-image-6-compare-and-pull-request.PNG)
 
@@ -127,11 +129,9 @@
 
 ` cd ansible-config-mgt `
 
-` ansible-playbook -i inventory/dev.yml playbooks/common.yml ` 
+` ansible-playbook -i inventory/dev.yml playbooks/common.yml1 ` 
 
-![image of ansible first run](./images/Project-11-image-8-ansible-playbook.-one-failed.PNG)
-
-![image of ansible second run ](./images/Project-11-image-8a-ansible-playbook.-one-all-passed.PNG)
+![image of ansible command ](./images/Project-11-image-8a-ansible-playbook.-one-all-passed.PNG)
 
 ![image of wireshark ](./images/Project-11-image-9-wireshark-version-on-my-mysql.PNG)
 
